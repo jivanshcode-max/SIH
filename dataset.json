@@ -1,0 +1,71 @@
+{
+  "junction": {
+    "tracks": [
+      {
+        "id": "track1",
+        "length_km": 10,
+        "speed_kmph": 60
+      },
+      {
+        "id": "track2",
+        "length_km": 10,
+        "speed_kmph": 48
+      }
+    ]
+  },
+  "trains": [
+    {
+      "id": "e101",
+      "train_name": "Bhopal Express",
+      "type": "express",
+      "priority": 1,
+      "starting_station": "New Delhi",
+      "destination_station": "Bhopal Junction",
+      "departure_time": "06:00",
+      "arrival_time": "12:00",
+      "travel_time": "07:45",
+      "total_distance": "780 km",
+      "days_of_running": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "classes_available": ["CC", "EC"],
+      "fare_details": {
+        "CC": "₹900",
+        "EC": "₹1800"
+      }
+    },
+    {
+      "id": "p205",
+      "train_name": "Lucknow - Kanpur Passenger",
+      "type": "passenger",
+      "priority": 2,
+      "starting_station": "Lucknow Junction",
+      "destination_station": "Kanpur Central",
+      "departure_time": "05:30",
+      "arrival_time": "12:00",
+      "travel_time": "03:50",
+      "total_distance": "51 km",
+      "days_of_running": ["Daily"],
+      "classes_available": ["2S", "SL"],
+      "fare_details": {
+        "2S": "₹30",
+        "SL": "₹75"
+      }
+    },
+    {
+      "id": "f310",
+      "train_name": "Delhi - Chennai Goods Special",
+      "type": "freight",
+      "priority": 3,
+      "starting_station": "Tughlakabad",
+      "destination_station": "Chennai Goods Yard",
+      "departure_time": "08:00",
+      "arrival_time": "12:00",
+      "travel_time": "36:00",
+      "total_distance": "2300 km",
+      "days_of_running": ["Daily"],
+      "classes_available": [],
+      "fare_details": {
+        "goods_fare": "₹568"
+      }
+    }
+  ]
+}
