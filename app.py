@@ -14,7 +14,7 @@ last_clearance = data.get("last_section_clearance_time", "N/A")
 st.set_page_config(page_title="Section Scheduling Results", layout="wide")
 
 # Title
-st.title("🚦 Train Section Scheduling Results")
+st.title("Train Section Scheduling Results")
 
 # Subtitle
 st.markdown(
@@ -42,14 +42,14 @@ st.dataframe(df, use_container_width=True)
 
 # Train selector
 train_names = [t["train_name"] for t in trains]
-selected_train = st.selectbox("🔎 View details for a train:", train_names)
+selected_train = st.selectbox("View details for a train:", train_names)
 
 # Show details in section-level style
 if selected_train:
     train = next(t for t in trains if t["train_name"] == selected_train)
 
     st.markdown("---")
-    st.subheader(f"📌 Train Details: {train['train_name']}")
+    st.subheader(f"Train Details: {train['train_name']}")
 
     col1, col2 = st.columns(2)
 
@@ -71,7 +71,7 @@ if selected_train:
         st.markdown(f"**Assigned Track:** {train['assigned_track']}")
 
     if train.get("classes_available"):
-        st.markdown("### 🎟️ Fare Details")
+        st.markdown("Fare Details")
         fares = pd.DataFrame.from_dict(train["fare_details"], orient="index", columns=["Fare"])
         fares.index.name = "Class"
         st.table(fares)
@@ -79,6 +79,6 @@ if selected_train:
 # Last section clearance at bottom
 st.markdown("---")
 st.markdown(
-    f"<h4 style='color: green;'>✅ Last Section Clearance Time: {last_clearance}</h4>",
+    f"<h4 style='color: green;'>Last Section Clearance Time: {last_clearance}</h4>",
     unsafe_allow_html=True
 )
